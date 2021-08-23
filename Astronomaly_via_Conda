@@ -1,0 +1,23 @@
+Note that these instructions only apply if you do not have an existing instance of Anaconda/Miniconda installed.
+If you have already have working Conda environments you will have to adapt these instructions to suit your setup.
+1. Type "cd" and press enter to ensure that you're in the top-level of your home directory.
+2. Execute the command "wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh".
+3. Ececute the command "sh Miniconda3-latest-Linux-x86_64.sh".
+4. Agree to the licence.
+5. Confirm installation location (default is fine). If you change this make sure you also change the location in the steps below!
+6. Miniconda will then unpack with some output.
+7. Do not initialise Miniconda (just press enter at the prompt - the default selection is "no").
+8. Copy and paste the following on its own line in your .bashrc (pay close attention to the single and double quotes).
+alias conda_init='eval "$(${HOME}/miniconda3/bin/conda shell.bash hook)"'
+9. Source your .bashrc or close the terminal and open a new one.
+10. Type "alias" to confirm the presence of this alias.
+11. Type "conda_init" to initialise Conda on demand instead of every time you launch a terminal.
+Now follow the instructions in the Astronomaly "Super quickstart". They are repeated here for your convenience.
+12. Type "cd" to ensure that you're in the top-level of your home directory.
+13. git clone https://github.com/MichelleLochner/astronomaly/
+14. Type "cd astronomaly" to change to the cloned directory.
+15. Type the command "conda env create -f astronomaly_env.yml" to create the Astronomaly Conda environment. (This may take a while).
+16. You can see what Conda environments are installed with the command "conda env list".
+17. Execute the command "activate astronomaly" or "conda activate astronomaly" to activate the Astronomaly Conda enviroment.
+The environment name in the prompt should change from (base) to (astronomaly). Try the second command in step 17 if it doesn't.
+18. Execute the command "python setup.py install" to install Astronomaly.
