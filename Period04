@@ -4,6 +4,7 @@ Requirements: Java Runtime Environment (JRE)
 To install a JRE on Ubuntu use the following commands:
 sudo apt update
 sudo apt install default-jre
+
 Download the period04 installer using wget:
 wget https://www.univie.ac.at/tops/Period04/files/v120/period04-v1.2.0-linux-64bit.sh
 Run the installer like this:
