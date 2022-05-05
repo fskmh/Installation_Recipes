@@ -1,0 +1,16 @@
+Web page: https://www.univie.ac.at/tops/Period04/
+Requirements: Java Runtime Environment (JRE)
+
+To install a JRE on Ubuntu use the following commands:
+sudo apt update
+sudo apt install default-jre
+Download the period04 installer using wget:
+wget https://www.univie.ac.at/tops/Period04/files/v120/period04-v1.2.0-linux-64bit.sh
+Run the installer like this:
+sh period04-v1.2.0-linux-64bit.sh
+Accept the default installation locations.
+The installer will create a directory "bin" in your the top level of your home directory.
+Either add "${HOME}/bin" to your $PATH like this:
+echo 'export PATH="${HOME}/bin:${PATH}"' | tee -a ${HOME}/.bashrc
+Or run the program with this command:
+~/bin/period04
