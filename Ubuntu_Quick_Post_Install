@@ -1,0 +1,15 @@
+sudo apt -y install curl gfortran build-essential libcfitsio-bin libcfitsio-dev libfftw3-bin libfftw3-dev \
+libopenmpi3 openmpi-bin pgplot5 gnudatalanguage mc gftp htop glances ffmpeg mplayer vlc \
+mpv gimp inkscape krita geany geany-plugins cpu-x texlive texlive-science kile texmaker \
+texstudio texworks jupyter spyder python3-pyraf python3-tables python3-mpi4py python3-h5py \
+ssh ufw
+sudo systemctl disable cups-browsed
+sudo systemctl stop cups-browsed
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow from {IP_OF_YOUR_ADMIN_HOST}
+sudo ufw allow from {IP_RANGE_OF_YOUR_LOCAL_NETWORK} to any port 22
+sudo ufw status
