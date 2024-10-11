@@ -3,7 +3,7 @@ sudo apt -y full-upgrade
 sudo apt -y install ssh ufw curl gfortran build-essential libcfitsio-bin libcfitsio-dev libfftw3-bin libfftw3-dev \
 libopenmpi3 openmpi-bin pgplot5 gnudatalanguage mc gftp htop glances ffmpeg mplayer vlc mpv gimp inkscape krita \
 geany geany-plugins cpu-x texlive texlive-science kile texmaker texstudio texworks jupyter spyder python3-pyraf \
-python3-tables python3-mpi4py python3-h5py libhdf5-dev ftools-fv saods9 stellarium kstars gdisk\
+python3-tables python3-mpi4py python3-h5py-mpi libhdf5-openmpi-dev libgsl-dev ftools-fv saods9 stellarium kstars gdisk\
 dolphin-nextcloud nextcloud-desktop codeblocks
 sudo systemctl disable cups-browsed
 sudo systemctl stop cups-browsed
@@ -15,4 +15,4 @@ sudo ufw default allow outgoing
 sudo ufw allow from {IP_OF_YOUR_ADMIN_HOST}
 sudo ufw allow from {IP_RANGE_OF_YOUR_LOCAL_NETWORK} to any port 22
 sudo ufw status
-sudo snap install onlyoffice-desktopeditors spotube whatsie
+sudo snap install onlyoffice-desktopeditors spotube whatsie pycharm-community --classic
