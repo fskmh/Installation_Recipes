@@ -1,14 +1,16 @@
 sudo apt update
 sudo apt -y full-upgrade
 sudo apt -y install ssh ufw curl gfortran build-essential libcfitsio-bin libcfitsio-dev libfftw3-bin libfftw3-dev \
-libopenmpi3 openmpi-bin pgplot5 gnudatalanguage mc gftp htop glances ffmpeg mplayer vlc mpv gimp inkscape krita \
-geany geany-plugins cpu-x ftools-fv saods9 stellarium kstars gdisk dolphin-nextcloud nextcloud-desktop codeblocks \
+libopenmpi3 openmpi-bin pgplot5 gnudatalanguage mc gftp htop glances ffmpeg geany geany-plugins cpu-x ftools-fv saods9 \
+python3-pyraf python3-tables python3-mpi4py python3-h5py-mpi libhdf5-openmpi-dev libgsl-dev flatpak \
+stellarium kstars gdisk codeblocks mplayer vlc mpv gimp inkscape krita kile texmaker texstudio texworks jupyter spyder \
 texlive texlive-science texlive-science-doc texlive-latex-base-doc texlive-latex-extra-doc texlive-latex-recommended-doc \
 texlive-bibtex-extra texlive-extra-utils texlive-font-utils texlive-fonts-extra texlive-fonts-extra-doc \
 texlive-fonts-recommended texlive-fonts-recommended-doc texlive-formats-extra texlive-publishers texlive-publishers-doc \
 texlive-luatex texlive-pictures texlive-pictures-doc texlive-plain-generic texlive-pstricks texlive-pstricks-doc \
-kile texmaker texstudio texworks \
-jupyter spyder python3-pyraf python3-tables python3-mpi4py python3-h5py-mpi libhdf5-openmpi-dev libgsl-dev
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.vscodium.codium -y
+echo "alias codium=\"flatpak run com.vscodium.codium\" >> .bash_aliases"
 sudo systemctl disable cups-browsed
 sudo systemctl stop cups-browsed
 sudo systemctl enable ssh
