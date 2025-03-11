@@ -19,7 +19,7 @@ sudo ufw default allow outgoing
 sudo ufw allow from {IP_OF_YOUR_ADMIN_HOST}
 sudo ufw allow from {IP_RANGE_OF_YOUR_LOCAL_NETWORK} to any port 22
 sudo ufw status
-sudo snap install onlyoffice-desktopeditors spotube whatsie pycharm-community --classic
+sudo snap install onlyoffice-desktopeditors spotube whatsie zoom-client pycharm-community --classic
 sudo apt -y install flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.vscodium.codium -y
