@@ -13,10 +13,12 @@ alias conda_init='eval "$(${HOME}/miniconda3/bin/conda shell.bash hook)"'
 10. Type "alias" to confirm the presence of this alias.
 11. Type "conda_init" to initialise Conda on demand instead of every time you launch a terminal.
 Now follow the instructions in the section "Installing the Fermitools" guide here: https://github.com/fermi-lat/Fermitools-conda/wiki/Installation-Instructions
-They are repeated here (with some modifications) for your convenience.
+They are repeated here for your convenience.
 12. conda create -n fermi -c conda-forge -c fermi fermitools numpy=1.20
+If the Fermitools do not install correctly this way, you can try the following two commands:
 13. conda install mamba -n base -c conda-forge
 14. mamba create -n fermi -c conda-forge -c fermi fermitools numpy=1.20
+Once the Conda environment is installed it can be activated.
 15. conda activate fermi
 16. Optionally, you can add an alias that initialises Miniconda and the Fermitools environment in one shot by pasting the following line in your .bashrc (pay close attention to the single and double quotes).
 alias fermi_init='eval "$(${HOME}/miniconda3/bin/conda shell.bash hook)" && conda activate fermi'
