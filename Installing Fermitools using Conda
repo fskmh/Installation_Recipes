@@ -1,0 +1,22 @@
+Note that these instructions only apply if you do not have an existing instance of Anaconda/Miniconda installed.
+If you have already have working Conda environments you will have to adapt these instructions to suit your setup (or just rm -rf ~/miniconda3 or rm -rf ~/anaconda3).
+1. Type "cd" and press enter to ensure that you're in the top-level of your home directory.
+2. Execute the command "wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh".
+3. Ececute the command "sh Miniconda3-latest-Linux-x86_64.sh".
+4. Agree to the licence.
+5. Confirm installation location (default is fine). If you change this make sure you also change the location in the steps below!
+6. Miniconda will then unpack with some output.
+7. Do not initialise Miniconda (just press enter at the prompt - the default selection is "no").
+8. Copy and paste the following on its own line in your .bashrc (pay close attention to the single and double quotes).
+alias conda_init='eval "$(${HOME}/miniconda3/bin/conda shell.bash hook)"'
+9. Source your .bashrc or close the terminal and open a new one.
+10. Type "alias" to confirm the presence of this alias.
+11. Type "conda_init" to initialise Conda on demand instead of every time you launch a terminal.
+Now follow the instructions in the section "Installing the Fermitools" guide here: https://github.com/fermi-lat/Fermitools-conda/wiki/Installation-Instructions
+They are repeated here (with some modifications) for your convenience.
+12. conda create -n fermi -c conda-forge -c fermi fermitools numpy=1.20
+13. conda install mamba -n base -c conda-forge
+14. mamba create -n fermi -c conda-forge -c fermi fermitools numpy=1.20
+15. conda activate fermi
+16. Optionally, you can add an alias that initialises Miniconda and the Fermitools environment in one shot by pasting the following line in your .bashrc (pay close attention to the single and double quotes).
+alias fermi_init='eval "$(${HOME}/miniconda3/bin/conda shell.bash hook)" && conda activate fermi'
