@@ -11,6 +11,7 @@ texlive-fonts-recommended texlive-fonts-recommended-doc texlive-formats-extra te
 texlive-luatex texlive-pictures texlive-pictures-doc texlive-plain-generic texlive-pstricks texlive-pstricks-doc
 sudo apt -y install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
+sudo systemctl status unattended-upgrades.service
 sudo systemctl disable cups-browsed
 sudo systemctl stop cups-browsed
 sudo systemctl enable chrony
