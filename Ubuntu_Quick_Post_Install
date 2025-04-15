@@ -18,6 +18,7 @@ sudo systemctl enable chrony
 sudo systemctl start chrony
 sudo systemctl enable ssh
 sudo systemctl start ssh
+edit /etc/update-manager/release-upgrades file and change 'Prompt=lts' to 'Prompt=never'
 sudo ufw enable
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
