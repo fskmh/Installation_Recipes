@@ -2,7 +2,7 @@ sudo apt update
 sudo apt -y full-upgrade
 sudo apt -y install chrony ssh ufw curl gfortran build-essential libcfitsio-bin libcfitsio-dev libfftw3-bin libfftw3-dev libgsl-dev \
 libopenmpi3 openmpi-bin libhdf5-openmpi-dev pgplot5 gnudatalanguage octave gnuplot mc gftp btop htop glances ffmpeg \
-filelight geany geany-plugins cpu-x gdisk mplayer vlc mpv gimp inkscape krita jupyter spyder \
+filelight gkrellm geany geany-plugins cpu-x gdisk mplayer vlc mpv gimp inkscape krita jupyter spyder \
 python3-pyraf python3-tables python3-mpi4py python3-h5py-mpi python3-pandas python3-emcee \
 ftools-fv saods9 stellarium kstars codeblocks kile kbibtex texmaker texstudio texworks \
 texlive texlive-science texlive-science-doc texlive-latex-base-doc texlive-latex-extra-doc texlive-latex-recommended-doc \
