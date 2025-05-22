@@ -1,6 +1,6 @@
 sudo apt update
 sudo apt -y full-upgrade
-sudo apt -y install curl gfortran build-essential libcfitsio-bin libcfitsio-dev libfftw3-bin libfftw3-dev libgsl-dev \
+sudo apt -y install curl gfortran build-essential libcfitsio-bin libcfitsio-dev libfftw3-bin libfftw3-dev libgsl-dev libpci3 \
 libopenmpi3 openmpi-bin libhdf5-openmpi-dev libopenblas-dev pgplot5 gnudatalanguage octave gnuplot mc gftp \
 btop htop glances ffmpeg geany geany-plugins jupyter spyder pip python3-pyraf python3-tables python3-mpi4py python3-h5py-mpi \
 python3-pandas ftools-fv saods9 \
