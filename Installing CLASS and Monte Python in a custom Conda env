@@ -23,3 +23,4 @@ pip install anesthetic
 cd && git clone https://github.com/lesgourg/class_public.git
 cd class_public && make
 cd && git clone https://github.com/brinckmann/montepython_public
+pip install -e .
