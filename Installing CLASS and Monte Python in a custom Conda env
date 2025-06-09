@@ -17,6 +17,8 @@ If that fails then do this instead
 git clone https://github.com/PolyChord/PolyChordLite.git
 cd PolyChordLite
 make COMPILER_TYPE=gnu
+# This is required if you plan on running any off the MPI demos
+mkdir chains
 It seems for the pip install command the Makefile has to be edited and COMPILER_TYPE hard-coded to gnu.
 pip install .
 pip install anesthetic
