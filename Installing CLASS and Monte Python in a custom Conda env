@@ -1,0 +1,25 @@
+### Required sources
+### https://github.com/lesgourg/class_public
+### https://github.com/PolyChord/PolyChordLite
+conda create -n cosmo python=3.9
+conda activate cosmo
+#These will be installed from Anaconda repo. Rather use conda-forge.
+#conda install -y gxx_linux-64 gcc_linux-64 gfortran_linux-64
+conda install -c conda-forge compilers
+conda install -c conda-forge gfortran
+conda install -c conda-forge openmpi
+conda install cython
+pip install -U pip setuptools
+pip install numpy scipy argparse corner emcee pymultinest
+pypolychord now has a new download location, so pip installing will not work
+pip install git+https://github.com/PolyChord/PolyChordLite@master
+If that fails then do this instead
+git clone https://github.com/PolyChord/PolyChordLite.git
+cd PolyChordLite
+make COMPILER_TYPE=gnu
+It seems for the pip install command the Makefile has to be edited and COMPILER_TYPE hard-coded to gnu.
+pip install .
+pip install anesthetic
+cd && git clone https://github.com/lesgourg/class_public.git
+cd class_public && make
+cd && git clone https://github.com/brinckmann/montepython_public
