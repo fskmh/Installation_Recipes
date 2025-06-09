@@ -8,7 +8,7 @@ conda activate cosmo
 conda install -c conda-forge compilers
 conda install -c conda-forge gfortran
 conda install -c conda-forge openmpi
-conda install cython
+conda install cython ipython
 pip install -U pip setuptools
 pip install numpy scipy h5py argparse corner emcee getdist pymultinest
 pypolychord now has a new download location, so pip installing will not work
