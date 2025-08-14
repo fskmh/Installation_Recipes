@@ -20,15 +20,24 @@ source $HOME/intel/oneapi/setvars.sh
 - Optionally disable telemetry
 echo "0.0.0.0 analytics.softwareimprovement.intel.com" | sudo tee -a /etc/hosts
 - Download and install OpenMPI
-wget https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.8.tar.gz
-tar -xzf openmpi-5.0.8.tar.gz
+wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.8.tar.bz2
+tar xf openmpi-4.1.8.tar.bz2
+cd openmpi-4.1.8
+- Or if you prefer to use OpenMPI 5.x
+wget https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.8.tar.bz2
+tar xf openmpi-5.0.8.tar.bz2
 cd openmpi-5.0.8
+- Configuring the OpenMPI sources for building:
 ./configure CC=icx CXX=icpx FC=ifx F77=ifx --prefix=$HOME/openmpi-intel
 - Or this for the 2024 version:
 ./configure CC=icx CXX=icpx FC=ifort F77=ifort --prefix=$HOME/openmpi-intel
+- Finally, the sources can be built and installed with these commands:
 make -j$(nproc)
 make install
-- Add OpenMPI paths to enviroment:
+- Add OpenMPI paths to environment:
 echo 'export PATH=$HOME/openmpi-intel/bin:$PATH' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=$HOME/openmpi-intel/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+- Automatically source the Intel oneAPI environment variables:
+echo 'source ${HOME}/intel/oneapi/setvars.sh' >> ~/.bashrc
+- Now close the terminal window and open a new one or just source your ~/.bashrc:
 source ~/.bashrc
