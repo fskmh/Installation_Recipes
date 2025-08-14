@@ -3,6 +3,11 @@
 - Make sure that the download options "Linux" and "Offline Installer" are highlighted before downloading.
 - The Intel oneAPI HPC Toolkit can be downloaded here:
 - https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html
+- Note that ifort has been removed from the HPC Toolkit and replaced with ifx (LLVM).
+- The 2024 version contains both ifort and ifx.
+- The 2024 versions can be downloaded with these command:
+wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/e6ff8e9c-ee28-47fb-abd7-5c524c983e1c/l_BaseKit_p_2024.2.1.100_offline.sh
+wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/d461a695-6481-426f-a22f-b5644cd1fa8b/l_HPCKit_p_2024.2.1.79_offline.sh
 - Make sure that the download options "Linux" and "Offline Installer" are highlighted before downloading.
 - Create an installation base directory and cd into it:
 mkdir -p ${HOME}/intel/oneapi
