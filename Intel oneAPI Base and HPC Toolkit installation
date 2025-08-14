@@ -1,18 +1,16 @@
-- The Intel oneAPI Base Toolkit can be downloaded here:
+- The Intel oneAPI Base and HPC Toolkits can be downloaded here:
 - https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html
-- Make sure that the download options "Linux" and "Offline Installer" are highlighted before downloading.
-- The Intel oneAPI HPC Toolkit can be downloaded here:
 - https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html
-- Note that ifort has been removed from the HPC Toolkit and replaced with ifx (LLVM).
+- Make sure that the download options "Linux" and "Offline Installer" are highlighted before downloading.
+- Note that ifort has been removed from the 2025 HPC Toolkit and replaced with ifx (LLVM).
 - The 2024 version contains both ifort and ifx.
-- The 2024 versions can be downloaded with these command:
+- The 2024 versions can be downloaded with these commands:
 wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/e6ff8e9c-ee28-47fb-abd7-5c524c983e1c/l_BaseKit_p_2024.2.1.100_offline.sh
 wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/d461a695-6481-426f-a22f-b5644cd1fa8b/l_HPCKit_p_2024.2.1.79_offline.sh
-- Make sure that the download options "Linux" and "Offline Installer" are highlighted before downloading.
 - Create an installation base directory and cd into it:
 mkdir -p ${HOME}/intel/oneapi
 cd $HOME/intel/oneapi
-- Assuming your browser download location is "Downloads", install the Base Toolkit like this
+- Assuming your browser download location is "Downloads", install the 2025 Toolkits (or substitute with the 2024 ones) like this:
 chmod a+x ${HOME}/Downloads/intel-oneapi-base-toolkit-2025.2.0.592_offline.sh
 ~/Downloads/intel-oneapi-base-toolkit-2025.2.0.592_offline.sh -a --silent --action install --eula accept --install-dir=${HOME}/intel/oneapi/ --ignore-errors
 chmod a+x ${HOME}/Downloads/intel-oneapi-hpc-toolkit-2025.2.0.575_offline.sh
@@ -25,7 +23,9 @@ echo "0.0.0.0 analytics.softwareimprovement.intel.com" | sudo tee -a /etc/hosts
 wget https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.8.tar.gz
 tar -xzf openmpi-5.0.8.tar.gz
 cd openmpi-5.0.8
-./configure CC=icc CXX=icpc FC=ifort F77=ifort --prefix=$HOME/openmpi-intel
+./configure CC=icx CXX=icpx FC=ifx F77=ifx --prefix=$HOME/openmpi-intel
+- Or this for the 2024 version:
+./configure CC=icx CXX=icpx FC=ifort F77=ifort --prefix=$HOME/openmpi-intel
 make -j$(nproc)
 make install
 - Add OpenMPI paths to enviroment:
