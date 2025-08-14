@@ -1,0 +1,29 @@
+- The Intel oneAPI Base Toolkit can be downloaded here:
+- https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html
+- Make sure that the download options "Linux" and "Offline Installer" are highlighted before downloading.
+- The Intel oneAPI HPC Toolkit can be downloaded here:
+- https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html
+- Make sure that the download options "Linux" and "Offline Installer" are highlighted before downloading.
+- Create an installation base directory and cd into it:
+mkdir -p ${HOME}/intel/oneapi
+cd $HOME/intel/oneapi
+- Assuming your browser download location is "Downloads", install the Base Toolkit like this
+chmod a+x ${HOME}/Downloads/intel-oneapi-base-toolkit-2025.2.0.592_offline.sh
+~/Downloads/intel-oneapi-base-toolkit-2025.2.0.592_offline.sh -a --silent --action install --eula accept --install-dir=${HOME}/intel/oneapi/ --ignore-errors
+chmod a+x ${HOME}/Downloads/intel-oneapi-hpc-toolkit-2025.2.0.575_offline.sh
+~/Downloads/intel-oneapi-hpc-toolkit-2025.2.0.575_offline.sh -a --silent --action install --eula accept --install-dir=${HOME}/intel/oneapi/ --ignore-errors
+- Activate the Intel oneAPI environment
+source $HOME/intel/oneapi/setvars.sh
+- Optionally disable telemetry
+echo "0.0.0.0 analytics.softwareimprovement.intel.com" | sudo tee -a /etc/hosts
+- Download and install OpenMPI
+wget https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.8.tar.gz
+tar -xzf openmpi-5.0.8.tar.gz
+cd openmpi-5.0.8
+./configure CC=icc CXX=icpc FC=ifort F77=ifort --prefix=$HOME/openmpi-intel
+make -j$(nproc)
+make install
+- Add OpenMPI paths to enviroment:
+echo 'export PATH=$HOME/openmpi-intel/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=$HOME/openmpi-intel/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+source .bashrc
