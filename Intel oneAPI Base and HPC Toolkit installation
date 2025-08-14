@@ -26,4 +26,4 @@ make install
 - Add OpenMPI paths to enviroment:
 echo 'export PATH=$HOME/openmpi-intel/bin:$PATH' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=$HOME/openmpi-intel/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
-source .bashrc
+source ~/.bashrc
