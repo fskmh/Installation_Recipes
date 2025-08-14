@@ -34,6 +34,11 @@ cd openmpi-5.0.8
 - Then the sources can be built and installed with these commands:
 make -j$(nproc)
 make install
+- Remove any existing lines in your ~/.bashrc that look like this:
+# Intel compiler
+if [ -f intel/intelvars.sh ]; then
+    . ~/intel/intelvars.sh
+fi
 - Finally, copy and paste these lines into your ~/.bashrc to complete the installation:
 echo "**************************************************"
 echo "* Initialising Intel oneAPI and OpenMPI wrappers *"
