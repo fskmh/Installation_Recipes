@@ -44,7 +44,7 @@ echo "**************************************************"
 echo "* Initialising Intel oneAPI and OpenMPI wrappers *"
 echo "**************************************************"
 source ${HOME}/intel/oneapi/setvars.sh
-export PATH=${HOME}/openmpi-intel/bin:{$PATH}
+export PATH=${HOME}/openmpi-intel/bin:${PATH}
 export LD_LIBRARY_PATH=${HOME}/openmpi-intel/lib:${LD_LIBRARY_PATH}
 alias ifort="ifort -diag-disable=10448 $@"
 alias mpif90="mpif90 -diag-disable=10448 $@"
