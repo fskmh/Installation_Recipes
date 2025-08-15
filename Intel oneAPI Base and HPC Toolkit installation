@@ -31,6 +31,10 @@ cd openmpi-5.0.8
 ./configure CC=icx CXX=icpx FC=ifx F77=ifx --prefix=$HOME/openmpi-intel
 - Or this for the 2024 version:
 ./configure CC=icx CXX=icpx FC=ifort F77=ifort --prefix=$HOME/openmpi-intel
+- This is how to configure to support CUDA accelerator:
+./configure CC=icx CXX=icpx FC=ifort F77=ifort --prefix=$HOME/openmpi-intel \
+--enable-mpi-fortran=all --with-valgrind --with-cuda=/usr/local/cuda --with-cuda-libdir=/usr/local/cuda/lib64/stubs \
+--enable-mca-dso=accelerator_cuda,btl_smcuda,rcache_gpusm,rcache_rgpusm,coll_ucc,scoll_ucc --with-show-load-errors='^accelerator,rcache,coll/ucc'
 - Then the sources can be built and installed with these commands:
 make -j$(nproc)
 make install
