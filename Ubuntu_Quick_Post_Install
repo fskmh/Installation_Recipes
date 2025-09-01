@@ -32,3 +32,5 @@ sudo apt -y install flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.vscodium.codium -y
 echo "alias codium=\"flatpak run com.vscodium.codium\" >> .bash_aliases"
+sudo apt -y install nvidia-cuda-toolkit nvidia-cuda-toolkit-gcc nvidia-cudnn
+sudo dpkg -s nvidia-driver / sudo ubuntu-drivers autoinstall
