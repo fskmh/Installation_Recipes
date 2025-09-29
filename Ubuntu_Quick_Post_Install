@@ -13,7 +13,10 @@ texlive-luatex texlive-pictures texlive-pictures-doc texlive-plain-generic texli
 sudo apt -y install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
 sudo nano /etc/apt/apt.conf.d/50unattended-upgrades and uncomment "${distro_id}:${distro_codename}-updates";
+sudo unattended-upgrades --debug
 sudo systemctl restart unattended-upgrgades.service
+sudo systemctl status unattended-upgrades
+sudo systemctl status apt-daily-upgrade.timer
 edit /etc/update-manager/release-upgrades file and change 'Prompt=lts' to 'Prompt=never'
 sudo systemctl disable cups-browsed
 sudo systemctl stop cups-browsed
