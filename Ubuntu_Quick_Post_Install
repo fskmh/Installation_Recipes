@@ -18,6 +18,13 @@ sudo systemctl restart unattended-upgrgades.service
 sudo systemctl status unattended-upgrades
 sudo systemctl status apt-daily-upgrade.timer
 edit /etc/update-manager/release-upgrades file and change 'Prompt=lts' to 'Prompt=never'
+sudo nano /etc/systemd/sleep.conf
+Uncomment and change the following to no
+[Sleep]
+AllowSuspend=no
+AllowHibernation=no
+AllowSuspendThenHibernate=no
+AllowHybridSleep=no
 sudo systemctl disable cups-browsed
 sudo systemctl stop cups-browsed
 sudo systemctl enable chrony
